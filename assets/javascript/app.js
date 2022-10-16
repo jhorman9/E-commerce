@@ -5,33 +5,36 @@ const closed = document.querySelector(".closed");
 const carShop = document.querySelector("#car__shop");
 
 const Allsproducts = [
-    {name: "Computer", price: 180, stock: 8, img: "/assets/imgs/12-2-computer-pc-download-png.png", id: 1},
-    {name: "ComputerAdvance", price: 170, stock: 7, img: "/assets/imgs/computer-lab-.png", id: 2},
-    {name: "ComputerAdvance2D", price: 160, stock: 6, img: "/assets/imgs/Desktop-Computer-PNG-Transparent.png", id: 3},
-    {name: "Computer 35GB ram", price: 150, stock: 5, img: "/assets/imgs/Desktop-Computer.png", id: 4},
-    {name: "Controller", price: 140, stock: 4, img: "/assets/imgs/Playstation-4-Controller-.png", id: 5},
-    {name: "playStation", price: 130, stock: 8, img: "/assets/imgs/PlayStation-4.png", id: 6},
-    {name: "console PS1", price: 120, stock: 7, img: "/assets/imgs/PlayStationConsole_bkg-transparent.png", id: 7},
-    {name: "SmarthPhone", price: 110, stock: 6, img: "/assets/imgs/smarthPhone.jpg", id: 8},
-    {name: "Phone", price: 110, stock: 5, img: "/assets/imgs/SmarthPhones.png", id: 9},
-    {name: "Juego", price: 110, stock: 4, img: "/assets/imgs/technology.png", id: 10},
-    {name: "PlayStation-4", price: 110, stock: 8, img: "/assets/imgs/PlayStation-4.png", id: 11}
+    {name: "Computer", price: 180.18, stock: 8, img: "/assets/imgs/12-2-computer-pc-download-png.png", id: 1},
+    {name: "ComputerAdvance", price: 170.15, stock: 7, img: "/assets/imgs/computer-lab-.png", id: 2},
+    {name: "ComputerAdvance2D", price: 160.31, stock: 6, img: "/assets/imgs/Desktop-Computer-PNG-Transparent.png", id: 3},
+    {name: "Computer 35GB ram", price: 150.85, stock: 5, img: "/assets/imgs/Desktop-Computer.png", id: 4},
+    {name: "Controller", price: 140.15, stock: 4, img: "/assets/imgs/Playstation-4-Controller-.png", id: 5},
+    {name: "playStation", price: 130.98, stock: 8, img: "/assets/imgs/PlayStation-4.png", id: 6},
+    {name: "console PS1", price: 120.56, stock: 7, img: "/assets/imgs/PlayStationConsole_bkg-transparent.png", id: 7},
+    {name: "SmarthPhone", price: 110.98, stock: 6, img: "/assets/imgs/smarthPhone.jpg", id: 8},
+    {name: "Phone", price: 110.15, stock: 5, img: "/assets/imgs/SmarthPhones.png", id: 9},
+    {name: "Juego", price: 110.86, stock: 4, img: "/assets/imgs/technology.png", id: 10},
+    {name: "PlayStation-4", price: 110.08, stock: 8, img: "/assets/imgs/PlayStation-4.png", id: 11}
 ]
 
 addHTML()
+let price = document.querySelector(".price");
+let getPrice =  Number(price.textContent);
 let productsCard = document.querySelectorAll(".products-cards");
 let count = document.querySelector(".count")
 let countToNumber = Number(count.textContent);
 countToNumber = 1;
 
 carShop.addEventListener("click", () =>{
-    asideDes.style.display = "block";
+    asideDes.style.display = "flex";
 })
 
 closed.addEventListener("click", () =>{
     asideDes.style.display = "none";
 })
 
+let productId = [];
 
 productsCard.forEach((productCard) =>{
     productCard.addEventListener("click", (e) =>{
@@ -40,13 +43,16 @@ productsCard.forEach((productCard) =>{
             Allsproducts.forEach((product) => {
                 const getId = e.target.getAttribute("id");
                 if(Number(getId) === product.id){
+                    productId.push(product.price);
+                    let sum = productId.reduce((a, b) => a + b );
+                    price.innerHTML = `${sum.toFixed(2)}$`; //da 2 decimales
                     aside.innerHTML += `<div class="products-aside">
                                                 <img class="product-img" src="${product.img}">
                                                 <div class="product-name">Product: ${product.name}</div>
                                                 <div class="product-price">Price: ${product.price}$</div>
                                                 <div class="product-amount">Amount: 1</div>
                                         </div>
-                                    `
+                                    `;
                 }
             })
         }

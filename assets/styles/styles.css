@@ -138,6 +138,18 @@ aside{
     background-color: var(--red);
     overflow-y: scroll;
     z-index: 2;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+aside .aside--footer{
+    text-align: end;
+}
+
+aside .aside--footer .price{
+    padding-right: 25px;
+    font-weight: bolder;
+    color: var(--blue);
 }
 
 aside .closed{
@@ -181,11 +193,11 @@ aside .aside__content .products-aside {
     background-color: var(--gray);
     justify-content: space-evenly;
     margin-top: 20px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 
