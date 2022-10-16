@@ -105,10 +105,27 @@ header figure img{
 
 header .car__shop{
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 22px;
+    top: 20px;
+    right: 25px;
     cursor: pointer;
+}
+
+header .car__shop .count{
+    position: absolute;
+    top: 0;
+    left: 25%;
+    background-color: var(--dark);
+    color: var(--white);
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 aside{
@@ -147,7 +164,7 @@ aside .aside__content img{
     height: 100px;
 }
 
-aside .products-aside {
+aside .products-content-aside {
     display: flex;
     justify-content: space-between;
 }
@@ -158,13 +175,27 @@ aside .text-aside {
     align-items: center;
 }
 
-main .products{
+aside .aside__content .products-aside {
+    display: flex;
+    align-items: center;
+    background-color: var(--gray);
+    justify-content: space-evenly;
+    margin-top: 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+main .products-content{
     width: 75%;
     margin: auto;
     position: relative;
 }
 
-main .products .products__article{
+main .products-content .products{
     display: flex;  
     align-items: center;
     flex-wrap: wrap;
@@ -173,11 +204,11 @@ main .products .products__article{
     gap: 50px;
  }
 
-main .products .products__article .products-cards{
+main .products-content .products .products-cards{
     padding: 15px;
  }
 
-main .products .products__article .products-cards{
+main .products-content .products .products-cards{
     background-color: var(--red);
     border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -189,7 +220,7 @@ main .products .products__article .products-cards{
     z-index: 1;
 }
 
-main .products .products__article .products-cards img{
+main .products-content .products .products-cards img{
     width: 190px;
     height: 150px;
     background-color: #d9d9d9;
@@ -200,25 +231,25 @@ main .products .products__article .products-cards img{
     -o-border-radius: 15px 15px 0 0;
 }
 
-main .products .products__article .products-cards p{
+main .products-content .products .products-cards p{
     color: var(--white);
     font-weight: 400;
  }
 
-main .products .products__article .products-cards span{
+main .products-content .products .products-cards span{
     color: var(--gray);
     padding: 5px;
     font-weight: 900;
  }
 
-main .products .products__article .products-cards .stocks{
+main .products-content .products .products-cards .stocks{
     color: var(--secundary);
     text-shadow: 0 0 5px var(--dark);
     text-align: center;
  }
 
 
-main .products .products__article .products-cards .btn{
+main .products-content .products .products-cards .btn{
     text-align: center;
     background-color: var(--dark);
     margin: 0;
@@ -226,7 +257,7 @@ main .products .products__article .products-cards .btn{
     cursor: pointer;
  }
 
-main .products .products__article .products-cards .btn:hover{
+main .products-content .products .products-cards .btn:hover{
     background-color: red;
 }
 
@@ -243,6 +274,8 @@ main .slider{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
 
 main .slider h2{
     text-shadow: 1px 1px 10px var(--blue);
